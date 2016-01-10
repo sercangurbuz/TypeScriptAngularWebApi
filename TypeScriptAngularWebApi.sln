@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeScriptAngularWebApi", "TypeScriptAngularWebApi\TypeScriptAngularWebApi.csproj", "{3CEAB215-84A1-44AB-8EF3-E0510D4659AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CEAB215-84A1-44AB-8EF3-E0510D4659AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CEAB215-84A1-44AB-8EF3-E0510D4659AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CEAB215-84A1-44AB-8EF3-E0510D4659AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CEAB215-84A1-44AB-8EF3-E0510D4659AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
