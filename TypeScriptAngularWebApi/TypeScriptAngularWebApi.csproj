@@ -23,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="app\cars\cars.html" />
     <Content Include="app\rota\core\angular-ui-router.js" />
     <Content Include="app\rota\core\angular.js" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -844,14 +845,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\cars\cars.models.ts" />
+    <TypeScriptCompile Include="app\cars\cars.ts" />
     <TypeScriptCompile Include="app\rota\base\basecontroller.ts" />
     <TypeScriptCompile Include="app\rota\base\basecrudcontroller.ts" />
+    <TypeScriptCompile Include="app\rota\base\basemodels.ts" />
+    <TypeScriptCompile Include="app\rota\base\baseservice.ts" />
+    <TypeScriptCompile Include="app\rota\base\index.ts" />
     <TypeScriptCompile Include="app\rota\config\infrastructure.index.ts" />
     <TypeScriptCompile Include="app\rota\config\main.ts" />
     <TypeScriptCompile Include="app\rota\config\vendor.index.ts" />
     <TypeScriptCompile Include="app\rota\config\app.ts" />
     <TypeScriptCompile Include="app\rota\core\index.ts" />
     <TypeScriptCompile Include="app\rota\lib\index.ts" />
+    <TypeScriptCompile Include="app\rota\services\index.ts" />
+    <TypeScriptCompile Include="app\rota\services\logger.ts" />
+    <TypeScriptCompile Include="app\rota\services\routing.ts" />
     <TypeScriptCompile Include="app\startup.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui-router\angular-ui-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
@@ -866,7 +875,6 @@
     <TypeScriptCompile Include="Scripts\typings\toastr\toastr.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\cars\" />
     <Folder Include="app\rota\directives\" />
   </ItemGroup>
   <PropertyGroup>

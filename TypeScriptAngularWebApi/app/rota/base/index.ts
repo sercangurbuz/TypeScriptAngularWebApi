@@ -1,0 +1,2 @@
+﻿import "./basecontroller"
+import "./basecrudcontroller"

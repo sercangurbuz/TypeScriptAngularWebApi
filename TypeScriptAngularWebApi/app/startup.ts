@@ -1,13 +1,11 @@
-﻿import {app} from "rota/config/app";
+﻿import { default as App } from './rota/config/app';
+import Routing = require("./rota/services/routing");
 
-export class Startup {
+App.run(["Routing", (routing: Routing.IRouting) => {
 
-    static init(): void {
-        Startup.registerStates();
-    }
+    routing.addState({
+        name: 'shell',
+        controller: './app/cars/'
+    });
 
-    static registerStates(): void {
-        console.log('reggistiretion started');
-    }
-}
-
+}]);
