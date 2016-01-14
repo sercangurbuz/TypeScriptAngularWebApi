@@ -1,11 +1,15 @@
 ﻿require.config({
-    //baseUrl: '.',
+    baseUrl: '.',
 
     paths: {
         //'jquery': 'Scripts/jquery-2.1.4',
         //'toastr': 'Scripts/toastr',
-        'angular': '../core/angular',
-        'angular-ui-router': '../core/angular-ui-router'
+        'angular': './app/rota/core/angular',
+        'angular-ui-router': './app/rota/core/angular-ui-router',
+
+        base: './app/rota/base',
+        config: './app/rota/config',
+        core: './app/rota/core'
     },
 
     shim: {
@@ -24,8 +28,8 @@
     }
 });
 
-require(['./vendor.index'], (): void  => {
-    require(['../../startup'], (): void => {
+require(['config/vendor.index'], (): void  => {
+    require(['app/startup'], (): void => {
         //Tum rota dosyalari yuklendiktan sonra angulari başlatiyoruz
         angular.element(document).ready(() => {
             angular.bootstrap(document, ['rota-app']);

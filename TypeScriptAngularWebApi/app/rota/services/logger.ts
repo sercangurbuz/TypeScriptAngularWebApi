@@ -1,14 +1,14 @@
 ﻿
-export interface ILogger {
+interface ILogger {
     log(msg: string): void;
     error(msg: string): void;
     warn(msg: string): void;
     success(msg: string): void;
 }
 
-export class Logger implements ILogger {
+class Logger implements ILogger {
     constructor() {
-        
+
     }
 
     log(msg: string): void {
@@ -31,6 +31,8 @@ export class Logger implements ILogger {
 //#region Register
 var module: ng.IModule = angular.module('rota.log.service', []);
 
-module.factory('Logger', Logger);
+module.service('Logger', Logger);
+
+export {ILogger, Logger}
 
 //#endregion

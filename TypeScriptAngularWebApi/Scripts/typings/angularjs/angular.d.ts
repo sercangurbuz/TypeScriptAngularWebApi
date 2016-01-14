@@ -1795,6 +1795,7 @@ declare module angular {
             provider(name: string, provider: IServiceProvider): IServiceProvider;
             provider(name: string, serviceProviderConstructor: Function): IServiceProvider;
             service(name: string, constructor: Function): IServiceProvider;
+            service(name: string, inlineAnnotatedFunction: any[]): IServiceProvider;
             value(name: string, value: any): IServiceProvider;
         }
 

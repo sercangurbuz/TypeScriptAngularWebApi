@@ -1,7 +1,8 @@
-﻿import Basecontroller = require("./basecontroller");
-import BaseModels = require("./basemodels");
+﻿import {IBaseController, BaseController} from "./basecontroller"
+import {IBaseModel} from "./basemodels"
 
-export interface IBaseCrudController<TModel extends BaseModels.IBaseModel> extends Basecontroller.IBaseController {
+
+interface IBaseCrudController<TModel extends IBaseModel> extends IBaseController {
     model: TModel;
     goBack(): void;
     save(): ng.IPromise<TModel>;
@@ -10,12 +11,15 @@ export interface IBaseCrudController<TModel extends BaseModels.IBaseModel> exten
     getModel(): ng.IPromise<TModel>;
 }
 
-export class BaseCrudController<TModel extends BaseModels.IBaseModel> extends
-    Basecontroller.BaseController implements IBaseCrudController<TModel> {
-    model: TModel = null;
+class BaseCrudController<TModel extends IBaseModel> extends BaseController implements IBaseCrudController<TModel> {
+    private _model: TModel = null;
+
+    get model(): TModel { return this._model; }
+    set model(value: TModel) { this._model = value; }
 
     constructor(bundle: { [s: string]: any; }) {
         super(bundle);
+        this.initModel();
     }
 
     //#region IBaseController
@@ -42,4 +46,13 @@ export class BaseCrudController<TModel extends BaseModels.IBaseModel> extends
         this.logger.log("deleting");
         return this.$q.when(null);
     }
+
+    initModel() {
+        var resultP = this.getModel();
+        return resultP.then((response: ng.IHttpPromiseCallbackArg<TModel>): TModel => {
+            return this.model = <TModel>response.data;
+        });
+    }
 }
+//Export
+export {IBaseCrudController, BaseCrudController}
