@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeScriptAngularWebApi", "TypeScriptAngularWebApi\TypeScriptAngularWebApi.csproj", "{3CEAB215-84A1-44AB-8EF3-E0510D4659AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{7601956B-3ACF-461F-B83D-ACB5D38C2847}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3CEAB215-84A1-44AB-8EF3-E0510D4659AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CEAB215-84A1-44AB-8EF3-E0510D4659AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CEAB215-84A1-44AB-8EF3-E0510D4659AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7601956B-3ACF-461F-B83D-ACB5D38C2847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7601956B-3ACF-461F-B83D-ACB5D38C2847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7601956B-3ACF-461F-B83D-ACB5D38C2847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7601956B-3ACF-461F-B83D-ACB5D38C2847}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

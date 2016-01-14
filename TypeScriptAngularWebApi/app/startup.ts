@@ -6,20 +6,18 @@ import { IBaseConfigProvider } from "./rota/base/baseconfig";
 //Config phase
 App.configure(["ConfigProvider", (config: IBaseConfigProvider<IMainConfig>) => {
     config.configure({
-        baseUrl: "http://localhost:32368"
+        baseUrl: "http://localhost:17637/api/"
     });
 }]);
 //Run phase
 App.run(["Routing", "Config", (routing: IRouting, config: IMainConfig) => {
 
     routing.addState({
-        name: 'cars',
-        controller: 'carsController',
-        templateUrl: 'app/cars/cars.html',
-        url: '/cars'
+        name: 'todos',
+        controller: 'todoController',
+        templateUrl: 'app/cars/todos.html',
+        url: '/todos'
     });
 
-
-    var ss = config.baseUrl;
-    routing.go("cars");
+    routing.go("todos");
 }]);

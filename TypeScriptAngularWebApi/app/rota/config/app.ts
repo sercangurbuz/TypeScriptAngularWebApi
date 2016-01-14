@@ -38,8 +38,7 @@ class RotaApp implements IRotaApp {
                 '$http': args[3],
                 'logger': args[4]
             }
-
-            var instance: IBaseController = new controller(bundle);
+            var instance: IBaseController = new controller(bundle, args[5]);
             //Instance'i dondur
             return instance;
         }; //Fonksiyonu son obje olarak dizinin sonuna ekle
@@ -59,7 +58,7 @@ class RotaApp implements IRotaApp {
                 'config': args[3]
             }
 
-            var instance: IBaseApi = new api(bundle);
+            var instance: IBaseApi = new api(bundle, args[4]);
             //Instance'i dondur
             return instance;
         }; //Fonksiyonu son obje olarak dizinin sonuna ekle

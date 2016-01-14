@@ -23,7 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.css" />
-    <Content Include="app\cars\cars.html" />
+    <Content Include="app\cars\todos.html" />
     <Content Include="app\rota\core\angular-ui-router.js" />
     <Content Include="app\rota\core\angular.js" />
     <Content Include="app\rota\core\require.js" />
@@ -846,8 +846,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app\cars\cars.models.ts" />
-    <TypeScriptCompile Include="app\cars\cars.ts" />
+    <TypeScriptCompile Include="app\cars\todos.models.ts" />
+    <TypeScriptCompile Include="app\cars\todos.controller.ts" />
     <TypeScriptCompile Include="app\rota\base\baseconfig.ts" />
     <TypeScriptCompile Include="app\rota\base\basecontroller.ts" />
     <TypeScriptCompile Include="app\rota\base\basecrudcontroller.ts" />
@@ -864,7 +864,7 @@
     <TypeScriptCompile Include="app\rota\services\index.ts" />
     <TypeScriptCompile Include="app\rota\services\logger.ts" />
     <TypeScriptCompile Include="app\rota\services\routing.ts" />
-    <TypeScriptCompile Include="app\cars\cars.service.ts" />
+    <TypeScriptCompile Include="app\cars\todos.service.ts" />
     <TypeScriptCompile Include="app\startup.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui-router\angular-ui-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
@@ -880,6 +880,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\rota\directives\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
