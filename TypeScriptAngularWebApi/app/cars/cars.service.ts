@@ -8,10 +8,7 @@ export interface ICarsApi extends IBaseApi {
 
 class CarsApi extends BaseApi implements ICarsApi {
     getCars(): angular.IPromise<ICarModel> {
-        return this.$http.get('/blogposts')
-            .then((response: ng.IHttpPromiseCallbackArg<ICarModel>): ICarModel=> {
-                return response.data;
-            });
+        return this.get<ICarModel>("cars");
     }
 }
 

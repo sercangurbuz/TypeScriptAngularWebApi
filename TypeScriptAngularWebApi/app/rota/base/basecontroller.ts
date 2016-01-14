@@ -1,6 +1,12 @@
-﻿import {Logger,ILogger} from "../services/logger";
+﻿import {Logger, ILogger} from "../services/logger";
 
 interface IBaseController {
+    $rootScope: ng.IRootScopeService;
+    $q: angular.IQService;
+    $http: ng.IHttpService;
+    $scope: ng.IScope;
+    logger: ILogger;
+
     goBack(): void;
 }
 
@@ -11,7 +17,7 @@ class BaseController implements IBaseController {
     $scope: ng.IScope;
     logger: ILogger;
 
-    constructor(bundle: { [s: string]: any; }) {
+    constructor(bundle: { [s: string]: any; }, ...args: any[]) {
         this.initBundle(bundle);
     }
 

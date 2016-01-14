@@ -50,7 +50,7 @@ class BaseCrudController<TModel extends IBaseModel> extends BaseController imple
     initModel() {
         var resultP = this.getModel();
         return resultP.then((response: ng.IHttpPromiseCallbackArg<TModel>): TModel => {
-            return this.model = <TModel>response.data;
+            return this.model = response.data;
         });
     }
 }

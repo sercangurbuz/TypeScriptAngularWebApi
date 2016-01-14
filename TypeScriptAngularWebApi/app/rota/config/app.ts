@@ -1,11 +1,11 @@
 ﻿import "./infrastructure.index"
-import {BaseController, IBaseController} from "../base/basecontroller";
+import {IBaseController, BaseController} from "../base/basecontroller";
 import {IBaseApi, BaseApi} from "../base/baseapi";
 
 interface IRotaApp {
     rotaModule: ng.IModule;
     addController(controllerName: string, controller: typeof BaseController, dependencies?: string[]): void;
-    addApi(apiName: string, api: typeof BaseApi, dependencies?: string[]): void ;
+    addApi(apiName: string, api: typeof BaseApi, dependencies?: string[]): void;
     configure(fn: Function): IRotaApp;
     configure(fn: any[]): IRotaApp;
     run(fn: Function): IRotaApp;
@@ -50,12 +50,13 @@ class RotaApp implements IRotaApp {
 
     addApi(apiName: string, api: typeof BaseApi, dependencies?: string[]): void {
         //Built-in dependencies - Ek dependencies ile birleştiriliyor
-        const deps: any[] = ['$rootScope', '$q', '$http'].concat(dependencies || []);
+        const deps: any[] = ['$rootScope', '$q', '$http', 'Config'].concat(dependencies || []);
         const apiCtor: Function = (...args: any[]): IBaseApi => {
             var bundle: { [s: string]: any; } = {
                 '$rootScope': args[0],
                 '$q': args[1],
-                '$http': args[2]
+                '$http': args[2],
+                'config': args[3]
             }
 
             var instance: IBaseApi = new api(bundle);
