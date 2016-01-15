@@ -10,14 +10,17 @@ App.configure(["ConfigProvider", (config: IBaseConfigProvider<IMainConfig>) => {
     });
 }]);
 //Run phase
-App.run(["Routing", "Config", (routing: IRouting, config: IMainConfig) => {
+App.run(["Routing", (routing: IRouting) => {
 
-    routing.addState({
+    routing.addStates([{
         name: 'todos',
-        controller: 'todoController',
-        templateUrl: 'app/cars/todos.html',
+        controller: 'todosController',
+        templateUrl: 'app/todo/todos.html',
         url: '/todos'
-    });
-
-    routing.go("todos");
+    }, {
+            name: 'todo',
+            controller: 'todoController',
+            templateUrl: 'app/todo/todo.html',
+            url: '/todos/:id'
+        }]).go("todos");
 }]);

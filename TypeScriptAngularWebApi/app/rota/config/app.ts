@@ -29,17 +29,20 @@ class RotaApp implements IRotaApp {
 
     addController(controllerName: string, controller: typeof BaseController, dependencies?: string[]): void {
         //Built-in dependencies - Ek dependencies ile birleştiriliyor
-        const deps: any[] = ['$rootScope', '$scope', '$q', '$http', 'Logger', 'Common'].concat(dependencies || []);
+        const deps: any[] = ['$rootScope', '$scope', '$q', '$http', '$window',
+            '$stateParams', 'Logger', 'Common'].concat(dependencies || []);
         const controllerCtor: Function = (...args: any[]): IBaseController => {
             var bundle: { [s: string]: any; } = {
                 '$rootScope': args[0],
                 '$scope': args[1],
                 '$q': args[2],
                 '$http': args[3],
-                'logger': args[4],
-                'common': args[5]
+                '$window': args[4],
+                '$stateParams': args[5],
+                'logger': args[6],
+                'common': args[7]
             }
-            var instance: IBaseController = new controller(bundle, args[6]);
+            var instance: IBaseController = new controller(bundle, args[8]);
             //Instance'i dondur
             return instance;
         }; //Fonksiyonu son obje olarak dizinin sonuna ekle
@@ -58,7 +61,6 @@ class RotaApp implements IRotaApp {
                 '$http': args[2],
                 'config': args[3]
             }
-
             var instance: IBaseApi = new api(bundle, args[4]);
             //Instance'i dondur
             return instance;

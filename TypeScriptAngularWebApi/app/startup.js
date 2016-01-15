@@ -6,14 +6,18 @@ define(["require", "exports", "./rota/config/app"], function (require, exports, 
             });
         }]);
     //Run phase
-    app_1.App.run(["Routing", "Config", function (routing, config) {
-            routing.addState({
-                name: 'todos',
-                controller: 'todoController',
-                templateUrl: 'app/cars/todos.html',
-                url: '/todos'
-            });
-            routing.go("todos");
+    app_1.App.run(["Routing", function (routing) {
+            routing.addStates([{
+                    name: 'todos',
+                    controller: 'todosController',
+                    templateUrl: 'app/todo/todos.html',
+                    url: '/todos'
+                }, {
+                    name: 'todo',
+                    controller: 'todoController',
+                    templateUrl: 'app/todo/todo.html',
+                    url: '/todos/:id'
+                }]).go("todos");
         }]);
 });
 //# sourceMappingURL=startup.js.map

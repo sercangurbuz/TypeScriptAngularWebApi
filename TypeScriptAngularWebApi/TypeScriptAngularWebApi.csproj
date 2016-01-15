@@ -23,7 +23,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.css" />
-    <Content Include="app\cars\todos.html" />
+    <Content Include="app\todo\todo.html" />
+    <Content Include="app\todo\todos.html" />
     <Content Include="app\rota\core\angular-ui-router.js" />
     <Content Include="app\rota\core\angular.js" />
     <Content Include="app\rota\core\require.js" />
@@ -846,8 +847,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app\cars\todos.models.ts" />
-    <TypeScriptCompile Include="app\cars\todos.controller.ts" />
+    <TypeScriptCompile Include="app\todo\todo.controller.ts" />
+    <TypeScriptCompile Include="app\todo\todos.models.ts" />
+    <TypeScriptCompile Include="app\todo\todos.controller.ts" />
     <TypeScriptCompile Include="app\rota\base\baseconfig.ts" />
     <TypeScriptCompile Include="app\rota\base\basecontroller.ts" />
     <TypeScriptCompile Include="app\rota\base\basecrudcontroller.ts" />
@@ -867,7 +869,7 @@
     <TypeScriptCompile Include="app\rota\services\index.ts" />
     <TypeScriptCompile Include="app\rota\services\logger.ts" />
     <TypeScriptCompile Include="app\rota\services\routing.ts" />
-    <TypeScriptCompile Include="app\cars\todos.service.ts" />
+    <TypeScriptCompile Include="app\todo\todos.service.ts" />
     <TypeScriptCompile Include="app\startup.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui-router\angular-ui-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />

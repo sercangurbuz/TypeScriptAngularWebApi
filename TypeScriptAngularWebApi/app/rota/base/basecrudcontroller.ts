@@ -1,32 +1,22 @@
 ﻿import {IBaseModelController, BaseModelController, IBundle} from "./basemodelcontroller"
 import {IBaseCrudModel} from "./basemodels"
 
+interface IModelStateParams extends ng.ui.IStateParamsService {
+    id: number;
+}
 
 interface IBaseCrudController<TModel extends IBaseCrudModel> extends IBaseModelController<TModel> {
-    save(): ng.IPromise<TModel>;
-    delete(): ng.IPromise<any>;
-    add(model: TModel): void;
+    $stateParams: IModelStateParams;
+    save(model: TModel): ng.IPromise<TModel>;
+    deleteById(id: number): ng.IPromise<any>;
     getModel(): ng.IPromise<TModel>;
 }
 
-
-class BaseCrudController<TModel extends IBaseCrudModel> extends BaseModelController<TModel> implements IBaseCrudController<TModel> {
-    save(): ng.IPromise<TModel> {
-        this.logger.log("saving");
-        return this.$q.when(null);
-    }
-
-   
-    delete(): ng.IPromise<any> {
-        this.logger.log("deleting");
-        return this.$q.when(null);
-    }
-
-    add(model: TModel): void {
-        this.logger.log("adding");
-    }
-
-    getModel(): ng.IPromise<TModel> { throw new Error("Not implemented"); }
+abstract class BaseCrudController<TModel extends IBaseCrudModel> extends BaseModelController<TModel> implements IBaseCrudController<TModel> {
+    $stateParams: IModelStateParams;
+    abstract save(model: TModel): ng.IPromise<TModel>;
+    abstract deleteById(id: number): ng.IPromise<any>;
+    abstract getModel(): ng.IPromise<TModel>;
 }
 //Export
 export {IBaseCrudController, BaseCrudController, IBundle}
