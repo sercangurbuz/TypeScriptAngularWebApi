@@ -1,20 +1,20 @@
 ﻿import {App} from "app/rota/config/app";
-import {BaseCrudController} from "app/rota/base/basecrudcontroller";
+import {BaseListController, IBundle} from "app/rota/base/baselistcontroller";
 import {ITodoModel} from "./todos.models";
 import {ITodoApi} from "./todos.service";
 import "./todos.service";
 
-class TodoController extends BaseCrudController<ITodoModel> {
+class TodosController extends BaseListController<ITodoModel> {
     todoApi: ITodoApi;
 
-    constructor(bundle: { [s: string]: any; }, todoApi: ITodoApi) {
+    constructor(bundle: IBundle, todoApi: ITodoApi) {
         this.todoApi = todoApi;
         super(bundle);
     }
 
-    getModel(): ng.IPromise<ITodoModel> {
+    getModel(): ng.IPromise<ITodoModel[]> {
         return this.todoApi.getTodos();
     }
 }
 
-App.addController("todoController", TodoController, ["todoApi"]);
+App.addController("todosController", TodosController, ["todoApi"]);

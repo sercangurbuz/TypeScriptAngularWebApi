@@ -1,24 +1,31 @@
 ﻿import {Logger, ILogger} from "../services/logger";
+import {Common, ICommon} from "../services/common";
 
+interface IBundle {
+    [s: string]: any;
+}
 interface IBaseController {
     $rootScope: ng.IRootScopeService;
     $q: angular.IQService;
     $http: ng.IHttpService;
     $scope: ng.IScope;
     logger: ILogger;
+    common: ICommon;
 
     goBack(): void;
 }
 
 class BaseController implements IBaseController {
     $rootScope: ng.IRootScopeService;
-    $q: angular.IQService;
+    $q: ng.IQService;
     $http: ng.IHttpService;
     $scope: ng.IScope;
     logger: ILogger;
+    common: ICommon;
 
-    constructor(bundle: { [s: string]: any; }, ...args: any[]) {
+    constructor(bundle: IBundle, ...args: any[]) {
         this.initBundle(bundle);
+        return this;
     }
 
     initBundle(bundle: { [s: string]: any; }): void {
@@ -27,6 +34,7 @@ class BaseController implements IBaseController {
         this.$scope = bundle['$scope'];
         this.$http = bundle['$http'];
         this.logger = bundle["logger"];
+        this.common = bundle["common"];
     }
 
     goBack(): void {
@@ -34,4 +42,4 @@ class BaseController implements IBaseController {
     }
 }
 //Export
-export {IBaseController, BaseController}
+export {IBaseController, BaseController, IBundle}

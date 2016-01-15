@@ -851,6 +851,8 @@
     <TypeScriptCompile Include="app\rota\base\baseconfig.ts" />
     <TypeScriptCompile Include="app\rota\base\basecontroller.ts" />
     <TypeScriptCompile Include="app\rota\base\basecrudcontroller.ts" />
+    <TypeScriptCompile Include="app\rota\base\baselistcontroller.ts" />
+    <TypeScriptCompile Include="app\rota\base\basemodelcontroller.ts" />
     <TypeScriptCompile Include="app\rota\base\basemodels.ts" />
     <TypeScriptCompile Include="app\rota\base\baseapi.ts" />
     <TypeScriptCompile Include="app\rota\base\index.ts" />
@@ -861,6 +863,7 @@
     <TypeScriptCompile Include="app\rota\config\app.ts" />
     <TypeScriptCompile Include="app\rota\core\index.ts" />
     <TypeScriptCompile Include="app\rota\lib\index.ts" />
+    <TypeScriptCompile Include="app\rota\services\common.ts" />
     <TypeScriptCompile Include="app\rota\services\index.ts" />
     <TypeScriptCompile Include="app\rota\services\logger.ts" />
     <TypeScriptCompile Include="app\rota\services\routing.ts" />

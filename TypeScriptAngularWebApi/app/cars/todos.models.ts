@@ -1,6 +1,10 @@
-﻿import BaseModels = require("../rota/base/basemodels");
+﻿import {IBaseListModel, IBaseCrudModel, IBaseModel} from "../rota/base/basemodels";
 
-export interface ITodoModel extends BaseModels.IBaseModel {
+interface ITodoModel extends IBaseModel {
     text: string;
     done: boolean;
+    id: number;
 }
+
+export {ITodoModel}
+
