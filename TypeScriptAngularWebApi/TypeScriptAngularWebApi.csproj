@@ -847,14 +847,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\rota\base\baselistcontroller.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="app\rota\base\basemodelcontroller.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="app\rota\services\index.ts" />
+    <TypeScriptCompile Include="app\rota\services\routing.ts" />
     <TypeScriptCompile Include="app\todo\todo.controller.ts" />
     <TypeScriptCompile Include="app\todo\todos.models.ts" />
     <TypeScriptCompile Include="app\todo\todos.controller.ts" />
     <TypeScriptCompile Include="app\rota\base\baseconfig.ts" />
     <TypeScriptCompile Include="app\rota\base\basecontroller.ts" />
     <TypeScriptCompile Include="app\rota\base\basecrudcontroller.ts" />
-    <TypeScriptCompile Include="app\rota\base\baselistcontroller.ts" />
-    <TypeScriptCompile Include="app\rota\base\basemodelcontroller.ts" />
     <TypeScriptCompile Include="app\rota\base\basemodels.ts" />
     <TypeScriptCompile Include="app\rota\base\baseapi.ts" />
     <TypeScriptCompile Include="app\rota\base\index.ts" />
@@ -866,9 +872,7 @@
     <TypeScriptCompile Include="app\rota\core\index.ts" />
     <TypeScriptCompile Include="app\rota\lib\index.ts" />
     <TypeScriptCompile Include="app\rota\services\common.ts" />
-    <TypeScriptCompile Include="app\rota\services\index.ts" />
     <TypeScriptCompile Include="app\rota\services\logger.ts" />
-    <TypeScriptCompile Include="app\rota\services\routing.ts" />
     <TypeScriptCompile Include="app\todo\todos.service.ts" />
     <TypeScriptCompile Include="app\startup.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui-router\angular-ui-router.d.ts" />
